@@ -22,5 +22,9 @@ exports.config = {
       project: 'e2e/tsconfig.e2e.json'
     });
     jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
+    var AllureReporter = require('jasmine-allure-reporter');
+    jasmine.getEnv().addReporter(new AllureReporter({
+      resultsDir: 'allure-results'
+    }));
   }
 };
